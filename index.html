@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mass Hiring</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Sign In</a></li>
+                    <li><a href="#">Browse</a></li>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </nav>
+        </header>
+        <h1>Mass Hiring</h1>
+        <button class="signup-button">
+            Sign up
+            <div class="arrow-wrapper">
+                <div class="arrow"></div>
+            </div>
+        </button>
+        <div class="form-container" id="page1">
+            <label for="username" class="label">
+                <span class="icon">👤</span>
+                <input type="text" id="username" name="username" class="input" placeholder="Username">
+            </label>
+            <button class="next-button" onclick="nextPage(1)">Next</button>
+        </div>
+        <div class="form-container" id="page2">
+            <label for="email" class="label">
+                <span class="icon">📧</span>
+                <input type="email" id="email" name="email" class="input" placeholder="Email">
+            </label>
+            <button class="next-button" onclick="nextPage(2)">Next</button>
+        </div>
+        <div class="form-container" id="page3">
+            <label for="phone" class="label">
+                <span class="icon">📞</span>
+                <input type="tel" id="phone" name="phone" class="input" placeholder="Phone Number">
+            </label>
+            <label for="age" class="label">
+                <span class="icon">🎂</span>
+                <input type="number" id="age" name="age" class="input" placeholder="Age">
+            </label>
+            <button class="next-button" onclick="nextPage(3)">Next</button>
+        </div>
+        <div class="form-container" id="page4">
+            <button class="role-button" onclick="chooseRole('recruiter')">Recruiter</button>
+            <button class="role-button" onclick="chooseRole('jobseeker')">Job Seeker</button>
+        </div>
+        <div class="form-container" id="page5-recruiter">
+            <label for="recruiter-role" class="label">
+                <span class="icon">💼</span>
+                <select id="recruiter-role" name="role" class="input">
+                    <option value="">Select Role</option>
+                    <option value="software-developer">Software Developer</option>
+                    <option value="web-developer">Web Developer</option>
+                    <option value="database-manager">Database Manager</option>
+                </select>
+            </label>
+            <label for="recruiter-location" class="label">
+                <span class="icon">📍</span>
+                <input type="text" id="recruiter-location" name="location" class="input" placeholder="Location">
+            </label>
+            <label for="salary" class="label">
+                <span class="icon">💵</span>
+                <input type="number" id="salary" name="salary" class="input" placeholder="Salary">
+            </label>
+            <button class="next-button" onclick="showRecommendations('recruiter')">Next</button>
+        </div>
+        <div class="form-container" id="page5-jobseeker">
+            <label for="experience" class="label">
+                <span class="icon">💻</span>
+                <select id="experience" name="experience" class="input">
+                    <option value="">Select Experience</option>
+                    <option value="software-developer">Software Developer</option>
+                    <option value="web-developer">Web Developer</option>
+                    <option value="database-manager">Database Manager</option>
+                </select>
+            </label>
+            <label for="jobseeker-location" class="label">
+                <span class="icon">📍</span>
+                <input type="text" id="jobseeker-location" name="location" class="input" placeholder="Location">
+            </label>
+            <button class="next-button" onclick="showRecommendations('jobseeker')">Next</button>
+        </div>
+        <div class="form-container" id="page6-recruiter">
+            <h2>Recommended Job Seekers</h2>
+            <ul id="recruiter-recommendations"></ul>
+        </div>
+        <div class="form-container" id="page6-jobseeker">
+            <h2>Available Jobs</h2>
+            <ul id="jobseeker-recommendations"></ul>
+        </div>
+    </div>
+    <script src="scripts.js"></script>
+</body>
+</html>
